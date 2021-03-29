@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Prime Number',
       home: const MyHomePage(),
       builder: (context, child) {
-        return Provider<PrimeNumberController>(
+        return ChangeNotifierProvider<PrimeNumberController>(
           create: (_) => PrimeNumberController(),
           child: child ?? const Offstage(),
         );
