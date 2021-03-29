@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../web_view_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class InformationView extends StatelessWidget {
   const InformationView({
@@ -15,19 +14,24 @@ class InformationView extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: () {
-              final route = MaterialPageRoute(
-                builder: (context) {
-                  return const WebViewPage(
-                    url: "https://github.com/dhimasdewanto",
-                  );
-                },
-              );
-              Navigator.of(context).push(route);
+              _lauchUrl("https://github.com/dhimasdewanto");
             },
             child: const Text("GitHub"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              _lauchUrl("https://www.linkedin.com/in/dhimas-bagus-rizky-dewanto-449b6b151/");
+            },
+            child: const Text("LinkedIn"),
           ),
         ],
       ),
     );
+  }
+
+  Future<void> _lauchUrl(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    }
   }
 }
