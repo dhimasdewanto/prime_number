@@ -25,6 +25,8 @@ dependencies:
     sdk: flutter
     
   provider: ^5.0.0
+  universal_io: ^2.0.3
+  webview_flutter: ^2.0.2
 
 dev_dependencies:
   flutter_test:
