@@ -12,7 +12,7 @@ class PrimeNumberController extends ChangeNotifier {
 
   void getPrimeNumbers(int start, int end) {
     final listNumbers = List<int>.generate(
-      end - start,
+      end - start + 1,
       (index) => index + start,
     );
     _changeState(state.copyWith(
