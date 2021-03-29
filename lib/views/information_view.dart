@@ -12,6 +12,21 @@ class InformationView extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          const CircleAvatar(
+            radius: 50,
+            backgroundImage: AssetImage("assets/images/profile.jpeg"),
+          ),
+          const SizedBox(height: 10),
+          Text(
+            "Dhimas Bagus Rizky Dewanto",
+            style: Theme.of(context).textTheme.headline6,
+          ),
+          const SizedBox(height: 10),
+          Text(
+            "dhimasbrd@gmail.com",
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
+          const SizedBox(height: 5),
           ElevatedButton(
             onPressed: () {
               _lauchUrl("https://github.com/dhimasdewanto");
@@ -20,7 +35,8 @@ class InformationView extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              _lauchUrl("https://www.linkedin.com/in/dhimas-bagus-rizky-dewanto-449b6b151/");
+              _lauchUrl(
+                  "https://www.linkedin.com/in/dhimas-bagus-rizky-dewanto-449b6b151/");
             },
             child: const Text("LinkedIn"),
           ),
