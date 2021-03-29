@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'controllers/prime_number_controller.dart';
 import 'views/information_view.dart';
 import 'views/prime_number_view.dart';
 
@@ -14,9 +16,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Prime Number',
-      home: MyHomePage(),
+      home: const MyHomePage(),
+      builder: (context, child) {
+        return Provider<PrimeNumberController>(
+          create: (_) => PrimeNumberController(),
+          child: child ?? const Offstage(),
+        );
+      },
     );
   }
 }
